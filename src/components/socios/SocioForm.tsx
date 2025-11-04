@@ -81,7 +81,7 @@ const SocioForm: React.FC<Props> = ({ initialData, onSubmit }) => {
           </div>
 
           <div style={{ marginBottom: '10px' }}>
-            <label>DNI: </label
+            <label>DNI: </label>
             <Field type="text" name="dni" style={{ width: '300px' }} disabled={!isCreating} />
             <ErrorMessage name="dni" component="div" style={{ color: 'red' }} />
           </div>
