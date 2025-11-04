@@ -8,10 +8,15 @@ import { registrarDevolucion } from '../../services/prestamoService';
 const validationSchema = Yup.object({
   idLibro: Yup.number()
     .required('El ID del Libro es obligatorio')
+    .nullable() // Permite que el valor inicial sea null
     .positive('El ID debe ser un número positivo')
     .integer('El ID debe ser un número entero'),
+  
+  nroSocio: Yup.string()
     .required('El Nro. de Socio es obligatorio')
     .matches(/^SOC-[A-Z0-9]{8}$/, 'El formato debe ser SOC-XXXXXXXX'),
+  
+  buenasCondiciones: Yup.boolean().required('Debe indicar la condición del libro'),
 });
 
 const DevolucionForm: React.FC = () => {
